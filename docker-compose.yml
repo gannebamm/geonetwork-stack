@@ -9,7 +9,7 @@ version: '3.4'
 services:
 
   geonetwork:
-    image: geonetwork:3.6.0+postgres
+    image: geonetwork:3.6.0postgres
     restart: unless-stopped
     container_name: core4geonetwork
     ports:
