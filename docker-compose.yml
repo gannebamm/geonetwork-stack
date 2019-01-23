@@ -5,11 +5,11 @@
 # Default user: admin
 # Default password: admin
 
-version: '3.1'
+version: '3.4'
 services:
 
   geonetwork:
-    image: geonetwork:postgres
+    image: geonetwork:3.6.0+postgres
     restart: unless-stopped
     container_name: core4geonetwork
     ports:
@@ -50,13 +50,12 @@ services:
       GEOSERVER_DATA_DIR: geonetwork
       GEOWEBCACHE_CACHE_DIR: geonetwork
     volumes:
-      - geoserver-data:/opt/geoserver/data_dir
+      - geoserver:/opt/geoserver/data_dir
 
 volumes:
   geonetwork:
     name: data-geonetwork
-  geoserver-data:
+  geoserver:
     name: data-geoserver
   postgres:
     name: data-postgres
-    
